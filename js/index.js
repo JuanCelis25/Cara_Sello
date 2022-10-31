@@ -27,26 +27,39 @@ function mostrar(){
 nom.addEventListener('click', ()=>{
 let opci = document.getElementById('opci').value;
 opci = parseInt(opci);
-let apuesta = document.getElementById('apu').value
+let apuesta = document.getElementById('apu').value;
 apuesta = parseInt(apuesta);
 
-do {
-    switch (opci) {
-        case 1:
-            alert(`Dos mas Dos es igual a 5 Tu valor apostado es de ${apuesta}`);
-            
-            break;
-        case 2:
-            alert(`Dos mas Dos es igual a 4`)
-            break;
-    
-        default:
-            break;
-    }
-     confirm(`Desea seguir jugando?`)
+let i = 0
+let confirmar = true;
 
-} while (confirm = 0){
-    alert(`Gracias por jugar, espero vuelvas pronto`)
-};
+
+if ( apuesta >= 1000 ) {
+
+    do {
+        
+        switch (opci) {
+            
+            case 1:
+                swal(`Tu valor apostado es de ${apuesta}`);
+                
+                break;
+            case 2:
+                swal(`Tu valor apostado es de ${apuesta}`)
+                break;
+        
+            default:
+                break;
+        }
+         confirmar = window.confirm(`Desea seguir jugando?`)
+    
+    } while (confirmar == true){
+        swal(`Gracias por jugar, espero vuelvas pronto`)
+    };
+
+
+} else {
+    swal (`Por favor un valor mayor a 1000 `)
+}
 
 });
