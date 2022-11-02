@@ -1,65 +1,151 @@
-const nom= document.getElementById('ingr');
+/*
+let terminar = document.getElementById('ter')
 
+const Cra = document.getElementById('cara')
+let sello = document.getElementById('sello')
+let ganar = document.getElementById('ganar')
+let perder = document.getElementById('perder')
+let a = 1, b= 1, total = 0, i = 0;
 
-/*nom.addEventListener('click', ()=>{
-    const nombre = document.getElementById('nomb').value;
-    const apellido = document.getElementById('apel').value;
-
-    swal({
-        title: " Bienvenido ",
-        text: ` ${nombre} ${apellido} `,
-        icon: "success",
-      });
-
-      /*
-    swal (`Bienvenido ${nombre} ${apellido}`)*/
-  /*  
-})*/
+Cra.addEventListener('click', ()=>{
+    const apuesta = document.getElementById('apu').value;
+apuesta = parseInt (apuesta);
+    
+    if (apuesta >= 50000 ) {
+        alert(`Estas apostando mucho dinero`)
+    } else {
+        /*
+        if (opci < 1000) {
+            let aleatorio = Math.random()*2 +1;
+            let money = aleatorio.toPrecision(1);
+            if (money == 1) {
+                a= a+1
+                ganar.innerText= a;
+                total = total + opci;
+            } else  {
+                b = b+1
+                perder.innerText= b;
+                total = total - opci;
+            }
+            i = a + b;
+        } else {
+            swal(`por favor ingresar un valo igual o mayor a 100`)
+        }
+    }
+});*/
 
 /*
-function mostrar(){
-
-    swal('titulo', 'hola');
-}*/
-
-
-
-nom.addEventListener('click', ()=>{
-let opci = document.getElementById('opci').value;
-opci = parseInt(opci);
-let apuesta = document.getElementById('apu').value;
-apuesta = parseInt(apuesta);
-
-let i = 0
-let confirmar = true;
-
-
-if ( apuesta >= 1000 ) {
-
-    do {
-        
-        switch (opci) {
-            
-            case 1:
-                swal(`Tu valor apostado es de ${apuesta}`);
-                
-                break;
-            case 2:
-                swal(`Tu valor apostado es de ${apuesta}`)
-                break;
-        
-            default:
-                break;
-        }
-         confirmar = window.confirm(`Desea seguir jugando?`)
+sello.addEventListener('click', ()=>{
     
-    } while (confirmar == true){
-        swal(`Gracias por jugar, espero vuelvas pronto`)
-    };
-
-
-} else {
-    swal (`Por favor un valor mayor a 1000 `)
-}
-
+    if (opci >= 50000 ) {
+        alert(`Estas apostando mucho dinero`)
+    } else {
+        
+        if (opci < 1000) {
+            let aleatorio = Math.random()*2 +1;
+            let money = aleatorio.toPrecision(1);
+            if (money == 2) {
+                a= a+1
+                ganar.innerText= a;
+                total = total + opci;
+            } else  {
+                b = b+1
+                perder.innerText= b;
+                total = total - opci;
+            }
+            i = a + b;
+        } else {
+            swal(`por favor ingresar un valo igual o mayor a 100`)
+        }
+    }
 });
+terminar.addEventListener('click' , ()=>{
+    if (total <= 0) {
+        alert(`Gracias por jugar tu dinero total es de ${total}, y las veces que jugaste es de ${i} :(`)
+    } else {
+        alert(`Gracias por jugar tu dinero total es de ${total}, y las veces que jugaste es de ${i}, Es pero y vulvas pronto y como mucha suerte :3`) 
+    }
+})*/
+
+
+      
+
+
+const cara = document.getElementById('button-addon1');
+
+const gana= document.getElementById('ganar');
+const pierde = document.getElementById('perder');
+const intentos = document.getElementById('intento');
+let a = 0, b = 0 , i = 0 , total = 0  ;
+
+cara.addEventListener('click', ()=>{
+      let apuesta = document.getElementById('inp__').value;
+      apuesta = parseFloat(apuesta)
+      if(apuesta >= 1000){
+        let aleatorio =  Math.random()*2 + 1;
+        let money = aleatorio.toPrecision(1);
+            i = a + b;  
+            if(money == 1){
+
+                  
+                  gana.innerText= a
+                  a= a+1
+                  intentos.innerText = i;
+                  total = total + apuesta;
+            }else if(money > 1 || money < 1){
+
+                  b = b+1 
+                  pierde.innerHTML=b;
+                   
+                  intentos.innerHTML = i;    
+                  total = total - apuesta;
+            }
+            
+      
+      }else{
+            Swal.fire({title: `introducir un valor igual o mayor a 1000`, icon:`error`});
+      }
+      
+})
+
+const sello = document.getElementById('button-addon2');
+sello.addEventListener('click', ()=>{
+    let apuesta = document.getElementById('inp__').value;
+      apuesta = parseFloat(apuesta)
+      if(apuesta > 1999){
+        let aleatorio =  Math.random()*2 + 1;
+        let money = aleatorio.toPrecision(1);
+        i = a + b; 
+            if(money==2){
+
+                gana.innerText= a
+                a= a+1
+                intentos.innerText = i;
+                total = total + apuesta;
+                  
+            }else if(money <2 || money >2){
+                b = b+1 
+                pierde.innerHTML=b;
+                 
+                intentos.innerHTML = i;    
+                total = total - apuesta; 
+            }
+
+      }else{
+            Swal.fire({title: `introducir un valor igual o mayor a 1000`, icon:`error`});
+      }
+      
+     
+})
+
+const volver = document.getElementById('terminarr');
+volver.addEventListener('click', ()=>{
+      if(total <0){
+            Swal.fire({title: `Te amo muchas gracias por jugar` , text: `El total de tu perdida es de: $ ${total}`, icon:`error`  } );
+           
+      }else{
+            Swal.fire({title: `Te amo muchas gracias por jugar`, text:`El total es de: $ ${total}` , icon:`success`});
+            
+      }
+     
+})
