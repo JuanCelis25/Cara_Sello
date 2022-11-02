@@ -1,8 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Asap&family=Indie+Flower&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Asap&family=Bitter:ital,wght@1,100&family=Indie+Flower&display=swap');
 body{
       margin: 0%;
+      background-color: aliceblue;
 }
 #container_family{
       width: 100vw;
@@ -20,23 +18,33 @@ body{
       width: 17em;
       box-shadow: 1px 1px 9px black;
       border: 1px solid black;
+      border-radius: 15px;
       padding: 5%;
 }
-.juego{
+.score{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 120%;
+}
+.play{
       display: flex;
       width: 100%;
       gap: 5%;
-}.ganar, .perder{
+}.ganar, .perder, .intento{
       display: flex;
       flex-direction: column;
       width: 45%;
       align-items: center;
-      margin-top: 5%;
 }.ganar{
       color: rgb(99, 253, 99);
 }
 .perder{
       color: red;
+}
+.intento{
+      color: cornflowerblue;
 }
 #h1{
       font-size: 1.3em;
@@ -48,34 +56,53 @@ body{
       font-family: cursive;
       font-size: 80%;
 }
-#titulo h1{
-      font-weight: bold !important;
-      font-size: 2em !important;
-}
-#hr{
-      width: 100%;
-      border-top: 2px solid !important;
-      margin-top: 3%;
+.labe{
+      display: flex;
+      align-self: center;
+      justify-content: center;
       margin-bottom: 3%;
 }
 label{
-      font-weight: bold !important;
-      font-size: 18px;
-      margin-top: 5%;
-      margin-bottom: 10px;
+      font-size: 20px;
       font-family: 'Asap', sans-serif;
 }
 .btn:hover{
       transition: 0.5s;
-      border-radius: 15px;
+      border-radius: 35px;
 }
-
+#inpu{
+      display: flex;
+      align-self: center;
+      justify-content: center;
+      flex-direction: column;
+}
+#inpu button{
+      margin-top: 3%;
+      margin-bottom: 4%;
+      height: 2.5em;
+      font-size: 90%;
+      background-color: darkgray;
+      border: none;
+      border-radius: 13px;
+}
 input{
       font-family: 'Asap', sans-serif;
+      height: 2em;
+      margin-bottom: 5%;
+      border-radius: 10px;
 }
-.reset{
+.termina{
       display: flex;
       justify-content: center;
+      margin-top: 7%;
+}
+#terminarr{
+      width: 84.5%;
+      height: 2.5em;
+      font-size: 100%;
+      border-radius: 10px;
+      border: none;
+      background-color: thistle;
 }
 .moneda{
       width: 8em;
@@ -91,22 +118,36 @@ input{
       backface-visibility: hidden;
       position: absolute;
 }
+.moneda{
+      width: 10em;
+      height: 10em;  
+      margin-left: 20%;  
+      /*cambiar la animacion de la moneda escondida*/
+      transform-style: preserve-3d;   
+}
+.moneda div{
+      width: 100%;
+      height: 100%;
+      /*ocultar la moneda que se salga del contenedor*/
+      backface-visibility: hidden;
+      position: absolute;
+}
 .cara{
       border-radius: 50%;
-      background: url('img/cara-500.png');
+      background: url('../img/nueva_1000_cara_235.png');
       background-size: contain;
      
 }
 .sello{
-     background: url(img/sello-500.png);
+     background: url(../img/nueva_1000_sello_235.png);
      background-size: contain;
       border-radius: 50%;
       /*animacion de rotacion que oculta el sello*/
-      transform: rotateY(-365deg);
+      transform: rotateY(-175deg);
 }
 /*crear animacionde monedas*/
 .animate-heads{
-      animation: flipHeads 480s;
+      animation: flipHeads 600s;
       
 }
 
@@ -116,91 +157,99 @@ input{
             transform: rotateY(0deg);
       }
       to{
-            transform: rotateY(100000deg);
+            transform: rotateY(95000deg);
       }
 }
 
 @media screen and (min-width: 480px) {
-      #title h1{
-            font-size: 2.5em !important;
-      }
-      label{
-            font-size: 1.3em;
-            font-weight: 100 !important;
-            margin-top: 8%;
-      }input{
-            height: 2.5em ;
-      }.card_{
-            width: 24em;
-      }.moneda{
-            margin-left: 30%;
-            margin-top: 5%;
-            margin-bottom: 5%;
-      }#reinicio{
-            font-size: 1.1em;
-            width: 5em;
-      }#h1{
-            font-size: 1.3em;
-      }.mb-3 {
-            margin-bottom: 2rem !important;
-        }
-}
-@media screen and (min-width: 720px) {
-      #title h1{
-            font-size: 2.8em !important;
-            margin-top: 5%;
-      }
-      #container__ {    
+      .conten{
             display: flex;
             flex-direction: column;
-            align-items: center;
-            padding-left: 25%;
-            padding-right: 25% ;
-            background-color: rgba(0, 0, 0, 0.76);
-            color: white;
-      }.card_ {
+            width: 25em;
+            box-shadow: 1px 1px 9px black;
+            border: 1px solid black;
+            padding: 5%;
+      }
+      #inpu{
+            display: flex;
+            align-self: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 84.5%;
+      }
+      .moneda{
+            width: 10em;
+            height: 10em;  
+            margin-left: 30%;  
+            transform-style: preserve-3d;   
+      }    
+}
+@media screen and (min-width: 720px) {
+      .conten{
+            display: flex;
+            flex-direction: column;
             width: 30em;
-            border: 2px solid white;
-            border-radius: 15px;
-      }.moneda {
-            margin-left: 35%;
+            box-shadow: 1px 1px 9px black;
+            border: 1px solid black;
+            padding: 5%;
       }
-      #h1{
-            font-size: 1.5em;
-      }label{
-            font-size: 1.4em;
+      #inpu{
+            display: flex;
+            align-self: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 84.5%;
       }
-      .reset{
-            margin-top: 5%;
-      }
-      
-      
+      .moneda{
+            width: 10em;
+            height: 10em;  
+            margin-left: 30%;  
+            transform-style: preserve-3d;   
+      }     
 }
 @media screen and (min-width: 1024px) {
-      .btn{
-            font-size: 1em;
-      }#container__ {              
-            padding-left: 30%;
-            padding-right: 30% ;
-      }Swal{
-            width: 50%;
+      .conten{
+            display: flex;
+            flex-direction: column;
+            width: 30em;
+            box-shadow: 1px 1px 9px black;
+            border: 1px solid black;
+            padding: 5%;
       }
-      label{
-            margin-bottom: 7%;
+      #inpu{
+            display: flex;
+            align-self: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 84.5%;
       }
+      .moneda{
+            width: 10em;
+            height: 10em;  
+            margin-left: 30%;  
+            transform-style: preserve-3d;   
+      }   
 }
 @media screen and (min-width: 1200px) {
-      .btn{
-            font-size: 1em;
-      }#container__ {              
-            padding-left: 35%;
-            padding-right: 35%;
-      }Swal{
-            width: 50%;
+      .conten{
+            display: flex;
+            flex-direction: column;
+            width: 30em;
+            box-shadow: 1px 1px 9px black;
+            border: 1px solid black;
+            padding: 5%;
       }
-      label{
-            margin-bottom: 7%;
-      }#label{
-            width: 100%;
+      #inpu{
+            display: flex;
+            align-self: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 84.5%;
       }
+      .moneda{
+            width: 10em;
+            height: 10em;  
+            margin-left: 30%;  
+            transform-style: preserve-3d;   
+      }   
 }
