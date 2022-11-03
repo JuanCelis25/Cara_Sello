@@ -66,86 +66,121 @@ terminar.addEventListener('click' , ()=>{
         alert(`Gracias por jugar tu dinero total es de ${total}, y las veces que jugaste es de ${i}, Es pero y vulvas pronto y como mucha suerte :3`) 
     }
 })*/
-
-
-      
-
-
 const cara = document.getElementById('button-addon1');
-
+const sello = document.getElementById('button-addon2');
 const gana= document.getElementById('ganar');
 const pierde = document.getElementById('perder');
 const intentos = document.getElementById('intento');
 let a = 0, b = 0 , i = 0 , total = 0  ;
+const termina = document.getElementById('terminarr');
 
-cara.addEventListener('click', ()=>{
-      let apuesta = document.getElementById('inp__').value;
-      apuesta = parseFloat(apuesta)
-      if(apuesta >= 1000){
-        let aleatorio =  Math.random()*2 + 1;
-        let money = aleatorio.toPrecision(1);
-            i = a + b;  
-            if(money == 1){
-
-                  
-                  gana.innerText= a
-                  a= a+1
-                  intentos.innerText = i;
-                  total = total + apuesta;
-            }else if(money > 1 || money < 1){
-
-                  b = b+1 
-                  pierde.innerHTML=b;
-                   
-                  intentos.innerHTML = i;    
-                  total = total - apuesta;
-            }
-            
-      
-      }else{
-            Swal.fire({title: `introducir un valor igual o mayor a 1000`, icon:`error`});
-      }
-      
-})
-
-const sello = document.getElementById('button-addon2');
-sello.addEventListener('click', ()=>{
-    let apuesta = document.getElementById('inp__').value;
-      apuesta = parseFloat(apuesta)
-      if(apuesta > 1999){
-        let aleatorio =  Math.random()*2 + 1;
-        let money = aleatorio.toPrecision(1);
-        i = a + b; 
-            if(money==2){
-
-                gana.innerText= a
-                a= a+1
-                intentos.innerText = i;
-                total = total + apuesta;
-                  
-            }else if(money <2 || money >2){
-                b = b+1 
-                pierde.innerHTML=b;
-                 
-                intentos.innerHTML = i;    
-                total = total - apuesta; 
-            }
-
-      }else{
-            Swal.fire({title: `introducir un valor igual o mayor a 1000`, icon:`error`});
-      }
-      
-     
-})
-
-const volver = document.getElementById('terminarr');
-volver.addEventListener('click', ()=>{
+termina.addEventListener('click', ()=>{
       if(total <0){
             Swal.fire({title: `Te amo muchas gracias por jugar` , text: `El total de tu perdida es de: $ ${total}`, icon:`error`  } );
            
       }else{
-            Swal.fire({title: `Te amo muchas gracias por jugar`, text:`El total es de: $ ${total}` , icon:`success`});
-            
+            Swal.fire({title: `Te amo muchas gracias por jugar`, text:`El total es de: $ ${total}` , icon:`success`}); 
       }
      
+})
+cara.addEventListener('click', ()=>{
+      let apuesta = document.getElementById('inp__').value;
+      apuesta = parseFloat(apuesta)
+      if (apuesta >= 150000) {
+        Swal.fire({title: `Valor muy alto a jugaaaar`});
+        if(apuesta >= 1000){
+            let aleatorio =  Math.random()*2 + 1;
+            let money = aleatorio.toPrecision(1);
+                i = a + b;  
+                if(money == 1){    
+                      gana.innerText= a
+                      a= a+1
+                      intentos.innerText = i;
+                      total = total + apuesta;
+                }else if(money > 1 || money < 1){
+    
+                      b = b+1 
+                      pierde.innerHTML=b;
+                       
+                      intentos.innerHTML = i;    
+                      total = total - apuesta;
+                }
+          }else{
+                Swal.fire({title: `introducir un valor igual o mayor a 1000`, icon:`error`});
+          }
+      } else {
+        if(apuesta >= 1000){
+            let aleatorio =  Math.random()*2 + 1;
+            let money = aleatorio.toPrecision(1);
+                i = a + b;  
+                if(money == 1){
+    
+                      
+                      gana.innerText= a
+                      a= a+1
+                      intentos.innerText = i;
+                      total = total + apuesta;
+                }else if(money > 1 || money < 1){
+    
+                      b = b+1 
+                      pierde.innerHTML=b;
+                       
+                      intentos.innerHTML = i;    
+                      total = total - apuesta;
+                }
+                
+          
+          }else{
+                Swal.fire({title: `introducir un valor igual o mayor a 1000`, icon:`error`});
+          }
+      }
+      
+      
+})
+sello.addEventListener('click', ()=>{
+    let apuesta = document.getElementById('inp__').value;
+      apuesta = parseFloat(apuesta)
+      if (apuesta >= 150000) {
+        Swal.fire({title: `Valor muy alto a jugaaaar`});
+        if(apuesta > 1000){
+            let aleatorio =  Math.random()*2 + 1;
+            let money = aleatorio.toPrecision(1);
+            i = a + b; 
+                if(money==2){
+                    gana.innerText= a
+                    a= a+1
+                    intentos.innerText = i;
+                    total = total + apuesta;
+                      
+                }else if(money <2 || money >2){
+                    b = b+1 
+                    pierde.innerHTML=b;                
+                    intentos.innerHTML = i;    
+                    total = total - apuesta; 
+                }
+          }else{
+                Swal.fire({title: `introducir un valor igual o mayor a 1000`, icon:`error`});
+          } 
+      } else {
+        if(apuesta > 1000){
+            let aleatorio =  Math.random()*2 + 1;
+            let money = aleatorio.toPrecision(1);
+            i = a + b; 
+                if(money==2){
+                    gana.innerText= a
+                    a= a+1
+                    intentos.innerText = i;
+                    total = total + apuesta;
+                      
+                }else if(money <2 || money >2){
+                    b = b+1 
+                    pierde.innerHTML=b;                
+                    intentos.innerHTML = i;    
+                    total = total - apuesta; 
+                }
+          }else{
+                Swal.fire({title: `introducir un valor igual o mayor a 1000`, icon:`error`});
+          } 
+      }
+      
 })
