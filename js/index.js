@@ -1,6 +1,4 @@
 /*
-let terminar = document.getElementById('ter')
-
 const Cra = document.getElementById('cara')
 let sello = document.getElementById('sello')
 let ganar = document.getElementById('ganar')
