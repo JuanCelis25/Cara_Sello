@@ -66,6 +66,7 @@ terminar.addEventListener('click' , ()=>{
         alert(`Gracias por jugar tu dinero total es de ${total}, y las veces que jugaste es de ${i}, Es pero y vulvas pronto y como mucha suerte :3`) 
     }
 })*/
+
 const cara = document.getElementById('button-addon1');
 const sello = document.getElementById('button-addon2');
 const gana= document.getElementById('ganar');
@@ -79,14 +80,14 @@ termina.addEventListener('click', ()=>{
             Swal.fire({title: `Te amo muchas gracias por jugar` , text: `El total de tu perdida es de: $ ${total}`, icon:`error`  } );
            
       }else{
-            Swal.fire({title: `Te amo muchas gracias por jugar`, text:`El total es de: $ ${total}` , icon:`success`}); 
+            Swal.fire({title: `Te amo muchas gracias por jugar` , text:`El total es de: $ ${total}` , icon:`success`}); 
       }
      
 })
 cara.addEventListener('click', ()=>{
       let apuesta = document.getElementById('inp__').value;
       apuesta = parseFloat(apuesta)
-      if (apuesta >= 150000) {
+      if (apuesta >= 50000) {
         Swal.fire({title: `Valor muy alto a jugaaaar`});
         if(apuesta >= 1000){
             let aleatorio =  Math.random()*2 + 1;
@@ -140,7 +141,7 @@ cara.addEventListener('click', ()=>{
 sello.addEventListener('click', ()=>{
     let apuesta = document.getElementById('inp__').value;
       apuesta = parseFloat(apuesta)
-      if (apuesta >= 150000) {
+      if (apuesta >= 50000) {
         Swal.fire({title: `Valor muy alto a jugaaaar`});
         if(apuesta > 1000){
             let aleatorio =  Math.random()*2 + 1;
