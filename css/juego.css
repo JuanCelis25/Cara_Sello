@@ -5,19 +5,18 @@ body{
 #container_family{
       width: 100vw;
       height: 100vh;
-      
-      font-family: 'Asap', sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      font-family: 'Asap', sans-serif;
 }
 .conten{
       display: flex;
       flex-direction: column;
       width: 17em;
-      box-shadow: 1px 1px 9px black;
-      border: 1px solid black;
+      box-shadow: 1px 2px 15px black;
+      border: none;
       border-radius: 15px;
       padding: 5%;
 }
@@ -38,7 +37,7 @@ body{
       width: 45%;
       align-items: center;
 }.ganar{
-      color: rgb(99, 253, 99);
+      color: rgb(103, 225, 103);
 }
 .perder{
       color: red;
@@ -108,13 +107,11 @@ input{
       width: 8em;
       height: 8em;  
       margin-left: 25%;  
-      /*cambiar la animacion de la moneda escondida*/
       transform-style: preserve-3d;   
 }
 .moneda div{
       width: 100%;
       height: 100%;
-      /*ocultar la moneda que se salga del contenedor*/
       backface-visibility: hidden;
       position: absolute;
 }
@@ -122,13 +119,11 @@ input{
       width: 10em;
       height: 10em;  
       margin-left: 20%;  
-      /*cambiar la animacion de la moneda escondida*/
       transform-style: preserve-3d;   
 }
 .moneda div{
       width: 100%;
       height: 100%;
-      /*ocultar la moneda que se salga del contenedor*/
       backface-visibility: hidden;
       position: absolute;
 }
@@ -142,16 +137,12 @@ input{
      background: url(../img/nueva_1000_sello_235.png);
      background-size: contain;
       border-radius: 50%;
-      /*animacion de rotacion que oculta el sello*/
       transform: rotateY(-175deg);
 }
-/*crear animacionde monedas*/
-.animate-heads{
-      animation: flipHeads 600s;
-      
+.animate{
+      animation: flipHeads 600s; 
 }
 
-/*darle instrucciones a la anicacion creada*/
 @keyframes flipHeads{
       from{
             transform: rotateY(0deg);
@@ -167,7 +158,7 @@ input{
             flex-direction: column;
             width: 25em;
             box-shadow: 1px 1px 9px black;
-            border: 1px solid black;
+            border: none;
             padding: 5%;
       }
       #inpu{
@@ -188,9 +179,9 @@ input{
       .conten{
             display: flex;
             flex-direction: column;
-            width: 30em;
+            width: 35em;
             box-shadow: 1px 1px 9px black;
-            border: 1px solid black;
+            border: none;
             padding: 5%;
       }
       #inpu{
@@ -203,7 +194,7 @@ input{
       .moneda{
             width: 10em;
             height: 10em;  
-            margin-left: 30%;  
+            margin-left: 36%;  
             transform-style: preserve-3d;   
       }     
 }
@@ -211,9 +202,9 @@ input{
       .conten{
             display: flex;
             flex-direction: column;
-            width: 30em;
+            width: 38em;
             box-shadow: 1px 1px 9px black;
-            border: 1px solid black;
+            border: none;
             padding: 5%;
       }
       #inpu{
@@ -226,7 +217,7 @@ input{
       .moneda{
             width: 10em;
             height: 10em;  
-            margin-left: 30%;  
+            margin-left: 36%;  
             transform-style: preserve-3d;   
       }   
 }
@@ -234,9 +225,9 @@ input{
       .conten{
             display: flex;
             flex-direction: column;
-            width: 30em;
+            width: 38em;
             box-shadow: 1px 1px 9px black;
-            border: 1px solid black;
+            border: none;
             padding: 5%;
       }
       #inpu{
@@ -249,7 +240,7 @@ input{
       .moneda{
             width: 10em;
             height: 10em;  
-            margin-left: 30%;  
+            margin-left: 36%;  
             transform-style: preserve-3d;   
       }   
 }

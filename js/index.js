@@ -85,9 +85,9 @@ termina.addEventListener('click', ()=>{
      
 })
 cara.addEventListener('click', ()=>{
-      let apuesta = document.getElementById('inp__').value;
+      let apuesta = document.getElementById('inputt').value;
       apuesta = parseFloat(apuesta)
-      if (apuesta >= 50000) {
+      if (apuesta >= 150000) {
         Swal.fire({title: `Valor muy alto a jugaaaar`});
         if(apuesta >= 1000){
             let aleatorio =  Math.random()*2 + 1;
@@ -99,15 +99,13 @@ cara.addEventListener('click', ()=>{
                       intentos.innerText = i;
                       total = total + apuesta;
                 }else if(money > 1 || money < 1){
-    
                       b = b+1 
                       pierde.innerHTML=b;
-                       
                       intentos.innerHTML = i;    
                       total = total - apuesta;
                 }
           }else{
-                Swal.fire({title: `introducir un valor igual o mayor a 1000`, icon:`error`});
+                Swal.fire({title: `introducir un valor igual o mayor a 1000 Para poder jugar:33`, icon:`error`});
           }
       } else {
         if(apuesta >= 1000){
@@ -115,33 +113,27 @@ cara.addEventListener('click', ()=>{
             let money = aleatorio.toPrecision(1);
                 i = a + b;  
                 if(money == 1){
-    
-                      
                       gana.innerText= a
                       a= a+1
                       intentos.innerText = i;
                       total = total + apuesta;
                 }else if(money > 1 || money < 1){
-    
                       b = b+1 
-                      pierde.innerHTML=b;
-                       
+                      pierde.innerHTML=b; 
                       intentos.innerHTML = i;    
                       total = total - apuesta;
-                }
-                
-          
+                }   
           }else{
-                Swal.fire({title: `introducir un valor igual o mayor a 1000`, icon:`error`});
+                Swal.fire({title: `introducir un valor igual o mayor a 1000 Para poder jugar:33`, icon:`error`});
           }
       }
       
       
 })
 sello.addEventListener('click', ()=>{
-    let apuesta = document.getElementById('inp__').value;
+    let apuesta = document.getElementById('inputt').value;
       apuesta = parseFloat(apuesta)
-      if (apuesta >= 50000) {
+      if (apuesta >= 150000) {
         Swal.fire({title: `Valor muy alto a jugaaaar`});
         if(apuesta > 1000){
             let aleatorio =  Math.random()*2 + 1;
@@ -160,7 +152,7 @@ sello.addEventListener('click', ()=>{
                     total = total - apuesta; 
                 }
           }else{
-                Swal.fire({title: `introducir un valor igual o mayor a 1000`, icon:`error`});
+                Swal.fire({title: `introducir un valor igual o mayor a 1000 Para poder jugar:33`, icon:`error`});
           } 
       } else {
         if(apuesta > 1000){
@@ -180,7 +172,7 @@ sello.addEventListener('click', ()=>{
                     total = total - apuesta; 
                 }
           }else{
-                Swal.fire({title: `introducir un valor igual o mayor a 1000`, icon:`error`});
+                Swal.fire({title: `introducir un valor igual o mayor a 1000 Para poder jugar:33`, icon:`error`});
           } 
       }
       
