@@ -72,7 +72,7 @@ const sello = document.getElementById('button-addon2');
 const gana= document.getElementById('ganar');
 const pierde = document.getElementById('perder');
 const intentos = document.getElementById('intento');
-let a = 0, b = 0 , i = 0 , total = 0  ;
+let a = 0, b = 0 , i = 0 , total = 0;
 const termina = document.getElementById('terminarr');
 
 termina.addEventListener('click', ()=>{
@@ -98,11 +98,13 @@ cara.addEventListener('click', ()=>{
                       a= a+1
                       intentos.innerText = i;
                       total = total + apuesta;
+                      Swal.fire({title: `GANASTEEE`, text:`Salio CARA :333`, icon:`success`});
                 }else if(money > 1 || money < 1){
                       b = b+1 
                       pierde.innerHTML=b;
                       intentos.innerHTML = i;    
                       total = total - apuesta;
+                      Swal.fire({title: `PERDISTEE`, text:`Salio SELLO :(((`, icon:`warning`});
                 }
           }else{
                 Swal.fire({title: `introducir un valor igual o mayor a 1000 Para poder jugar:33`, icon:`error`});
@@ -117,11 +119,13 @@ cara.addEventListener('click', ()=>{
                       a= a+1
                       intentos.innerText = i;
                       total = total + apuesta;
+                      Swal.fire({title: `GANASTEEE`, text:`Salio CARA :333`, icon:`success`});
                 }else if(money > 1 || money < 1){
                       b = b+1 
                       pierde.innerHTML=b; 
                       intentos.innerHTML = i;    
                       total = total - apuesta;
+                      Swal.fire({title: `PERDISTEE`, text:`Salio SELLO :(((`, icon:`warning`});
                 }   
           }else{
                 Swal.fire({title: `introducir un valor igual o mayor a 1000 Para poder jugar:33`, icon:`error`});
@@ -144,12 +148,14 @@ sello.addEventListener('click', ()=>{
                     a= a+1
                     intentos.innerText = i;
                     total = total + apuesta;
+                    Swal.fire({title: `GANASTEEE`, text:`Salio SELLO :333`, icon:`success`});
                       
                 }else if(money <2 || money >2){
                     b = b+1 
                     pierde.innerHTML=b;                
                     intentos.innerHTML = i;    
-                    total = total - apuesta; 
+                    total = total - apuesta;
+                    Swal.fire({title: `PERDISTEE`,text:`Salio CARA :(((`, icon:`warning`}); 
                 }
           }else{
                 Swal.fire({title: `introducir un valor igual o mayor a 1000 Para poder jugar:33`, icon:`error`});
@@ -164,12 +170,14 @@ sello.addEventListener('click', ()=>{
                     a= a+1
                     intentos.innerText = i;
                     total = total + apuesta;
+                    Swal.fire({title: `GANASTEEE`, text:`Salio SELLO :333`, icon:`success`});
                       
                 }else if(money <2 || money >2){
                     b = b+1 
                     pierde.innerHTML=b;                
                     intentos.innerHTML = i;    
-                    total = total - apuesta; 
+                    total = total - apuesta;
+                    Swal.fire({title: `PERDISTEE`, text:`Salio CARA :(((`, icon:`warning`}); 
                 }
           }else{
                 Swal.fire({title: `introducir un valor igual o mayor a 1000 Para poder jugar:33`, icon:`error`});
